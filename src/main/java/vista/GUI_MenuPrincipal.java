@@ -1,6 +1,9 @@
 package vista;
 
+import button.MyButton;
 import java.awt.CardLayout;
+import java.awt.Color;
+import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import logica.Logica;
@@ -13,13 +16,54 @@ public class GUI_MenuPrincipal extends javax.swing.JFrame {
 
     public GUI_MenuPrincipal() {
         initComponents();
-        cardLayout = (CardLayout) pnlCards.getLayout();
-        obLogica = new Logica(pnlGridFacil, pnlGridMedio, pnlCards, lblIntentos, lblJugadorFacil, lblSuerteJugador, cardLayout, nombre, txtNombre);
 
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        cardLayout = (CardLayout) pnlCards.getLayout();
+        obLogica = new Logica(pnlGridFacil, pnlGridMedio, pnlGridDificil, pnlCards, lblIntentos, lblJugadorFacil, lblSuerteJugador, cardLayout, nombre, txtNombre);
+
+        // Agregar Botones Nivel Facil
+        for (int i = 1; i <= 10; i++) {
+            MyButton boton = new MyButton();
+            boton.setText(String.valueOf(i));
+            boton.setActionCommand(String.valueOf(i));
+            boton.setFont(new Font("Arial", 3, 32));
+            boton.setForeground(Color.WHITE);
+            boton.setColor(new Color(88, 24, 69));
+            boton.setColorOver(new Color(135, 37, 106));
+            boton.setColorClick(new Color(78, 25, 63));
+            boton.setBorderColor(new Color(78, 25, 63));
+            boton.setRadius(20);
+            pnlGridFacil.add(boton);
+        }
+
+        //Agregar Botones Nivel Medio
         for (int i = 1; i <= 30; i++) {
-            JButton boton = new JButton(String.valueOf(i));
-            boton.setActionCommand(String.valueOf(i)); // Comando de acción
-            pnlGridMedio.add(boton); // Añadir botón al panel
+            MyButton boton = new MyButton();
+            boton.setText(String.valueOf(i));
+            boton.setActionCommand(String.valueOf(i));
+            boton.setFont(new Font("Arial", 3, 32));
+            boton.setForeground(Color.WHITE);
+            boton.setColor(new Color(88, 24, 69));
+            boton.setColorOver(new Color(135, 37, 106));
+            boton.setColorClick(new Color(78, 25, 63));
+            boton.setBorderColor(new Color(78, 25, 63));
+            boton.setRadius(20);
+            pnlGridMedio.add(boton);
+        }
+        
+        //Agregar Botones Nivel Dificil
+        for (int i = 1; i <= 50; i++) {
+            MyButton boton = new MyButton();
+            boton.setText(String.valueOf(i));
+            boton.setActionCommand(String.valueOf(i));
+            boton.setFont(new Font("Arial", 3, 32));
+            boton.setForeground(Color.WHITE);
+            boton.setColor(new Color(88, 24, 69));
+            boton.setColorOver(new Color(135, 37, 106));
+            boton.setColorClick(new Color(78, 25, 63));
+            boton.setBorderColor(new Color(78, 25, 63));
+            boton.setRadius(20);
+            pnlGridDificil.add(boton);
         }
     }
 
@@ -39,12 +83,18 @@ public class GUI_MenuPrincipal extends javax.swing.JFrame {
         btnAdivinar = new javax.swing.JButton();
         pnlCardDificultad = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        btnFacil = new javax.swing.JButton();
-        btnRegresarAMenu = new javax.swing.JButton();
+        jPanel10 = new javax.swing.JPanel();
         lblSuerteJugador = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        btnNormal = new javax.swing.JButton();
+        jPanel11 = new javax.swing.JPanel();
+        jPanel12 = new javax.swing.JPanel();
+        jPanel13 = new javax.swing.JPanel();
+        jPanel14 = new javax.swing.JPanel();
+        btnMenuPrincipal = new button.MyButton();
+        jPanel15 = new javax.swing.JPanel();
+        btnFacil = new button.MyButton();
+        btnMedio = new button.MyButton();
+        btnDificil = new button.MyButton();
+        jLabel7 = new javax.swing.JLabel();
         pnlCardFacil = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
@@ -52,16 +102,6 @@ public class GUI_MenuPrincipal extends javax.swing.JFrame {
         lblIntentos = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         pnlGridFacil = new javax.swing.JPanel();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         btnSalirFacil = new javax.swing.JButton();
         pnlCardMedio = new javax.swing.JPanel();
@@ -73,6 +113,15 @@ public class GUI_MenuPrincipal extends javax.swing.JFrame {
         pnlGridMedio = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
         btnSalirMedio = new javax.swing.JButton();
+        pnlCardDificil = new javax.swing.JPanel();
+        jPanel16 = new javax.swing.JPanel();
+        jPanel17 = new javax.swing.JPanel();
+        lblJugadorDificil = new javax.swing.JLabel();
+        lblIntentosDificil = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        pnlGridDificil = new javax.swing.JPanel();
+        jPanel18 = new javax.swing.JPanel();
+        btnSalirDificil = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -102,6 +151,9 @@ public class GUI_MenuPrincipal extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(70, 250, 0, 0);
         jPanel3.add(jLabel3, gridBagConstraints);
+
+        txtNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNombre.setText("Rafael");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -141,43 +193,127 @@ public class GUI_MenuPrincipal extends javax.swing.JFrame {
 
         pnlCardDificultad.setLayout(new java.awt.GridBagLayout());
 
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel2.setLayout(new java.awt.BorderLayout());
 
-        jButton1.setText("DIFICIL");
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 120, 190, 90));
+        jPanel10.setLayout(new java.awt.GridBagLayout());
 
+        lblSuerteJugador.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jPanel10.add(lblSuerteJugador, new java.awt.GridBagConstraints());
+
+        jPanel2.add(jPanel10, java.awt.BorderLayout.NORTH);
+
+        jPanel11.setLayout(new java.awt.BorderLayout());
+
+        jPanel12.setLayout(new java.awt.GridBagLayout());
+        jPanel11.add(jPanel12, java.awt.BorderLayout.PAGE_START);
+
+        jPanel13.setLayout(new java.awt.BorderLayout());
+
+        jPanel14.setLayout(new java.awt.GridBagLayout());
+
+        btnMenuPrincipal.setBackground(new java.awt.Color(61, 152, 226));
+        btnMenuPrincipal.setForeground(new java.awt.Color(255, 255, 255));
+        btnMenuPrincipal.setText("Regresar");
+        btnMenuPrincipal.setBorderColor(new java.awt.Color(29, 78, 136));
+        btnMenuPrincipal.setColor(new java.awt.Color(61, 152, 226));
+        btnMenuPrincipal.setColorClick(new java.awt.Color(159, 204, 240));
+        btnMenuPrincipal.setColorOver(new java.awt.Color(20, 82, 132));
+        btnMenuPrincipal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMenuPrincipalActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.ipadx = 50;
+        gridBagConstraints.ipady = 30;
+        jPanel14.add(btnMenuPrincipal, gridBagConstraints);
+
+        jPanel13.add(jPanel14, java.awt.BorderLayout.PAGE_END);
+
+        jPanel15.setLayout(new java.awt.GridBagLayout());
+
+        btnFacil.setBackground(new java.awt.Color(25, 191, 52));
+        btnFacil.setForeground(new java.awt.Color(255, 255, 255));
         btnFacil.setText("FACIL");
+        btnFacil.setColor(new java.awt.Color(25, 191, 52));
+        btnFacil.setColorOver(new java.awt.Color(23, 114, 37));
+        btnFacil.setRadius(20);
         btnFacil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFacilActionPerformed(evt);
             }
         });
-        jPanel2.add(btnFacil, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 190, 90));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.ipadx = 86;
+        gridBagConstraints.ipady = 50;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(21, 79, 133, 0);
+        jPanel15.add(btnFacil, gridBagConstraints);
 
-        btnRegresarAMenu.setText("Regresar");
-        btnRegresarAMenu.addActionListener(new java.awt.event.ActionListener() {
+        btnMedio.setBackground(new java.awt.Color(217, 159, 9));
+        btnMedio.setForeground(new java.awt.Color(255, 255, 255));
+        btnMedio.setText("MEDIO");
+        btnMedio.setBorderColor(new java.awt.Color(139, 105, 2));
+        btnMedio.setColor(new java.awt.Color(217, 159, 9));
+        btnMedio.setColorClick(new java.awt.Color(239, 207, 152));
+        btnMedio.setColorOver(new java.awt.Color(144, 105, 6));
+        btnMedio.setRadius(20);
+        btnMedio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegresarAMenuActionPerformed(evt);
+                btnMedioActionPerformed(evt);
             }
         });
-        jPanel2.add(btnRegresarAMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 270, 150, 50));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.ipadx = 86;
+        gridBagConstraints.ipady = 50;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(21, 39, 133, 0);
+        jPanel15.add(btnMedio, gridBagConstraints);
 
-        lblSuerteJugador.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        lblSuerteJugador.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel2.add(lblSuerteJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 700, 40));
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Selecciona la Dificultad");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, 290, 30));
-
-        btnNormal.setText("MEDIO");
-        btnNormal.addActionListener(new java.awt.event.ActionListener() {
+        btnDificil.setBackground(new java.awt.Color(213, 64, 64));
+        btnDificil.setForeground(new java.awt.Color(255, 255, 255));
+        btnDificil.setText("DIFICIL");
+        btnDificil.setBorderColor(new java.awt.Color(155, 4, 22));
+        btnDificil.setColor(new java.awt.Color(213, 64, 64));
+        btnDificil.setColorClick(new java.awt.Color(219, 150, 156));
+        btnDificil.setColorOver(new java.awt.Color(125, 29, 29));
+        btnDificil.setRadius(20);
+        btnDificil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNormalActionPerformed(evt);
+                btnDificilActionPerformed(evt);
             }
         });
-        jPanel2.add(btnNormal, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, 190, 90));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.ipadx = 86;
+        gridBagConstraints.ipady = 50;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(21, 39, 133, 0);
+        jPanel15.add(btnDificil, gridBagConstraints);
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("Selecciona la dificultad");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.ipadx = 522;
+        gridBagConstraints.ipady = 15;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(76, 0, 0, 2);
+        jPanel15.add(jLabel7, gridBagConstraints);
+
+        jPanel13.add(jPanel15, java.awt.BorderLayout.CENTER);
+
+        jPanel11.add(jPanel13, java.awt.BorderLayout.CENTER);
+
+        jPanel2.add(jPanel11, java.awt.BorderLayout.CENTER);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
@@ -225,52 +361,6 @@ public class GUI_MenuPrincipal extends javax.swing.JFrame {
         jPanel4.add(jPanel5, java.awt.BorderLayout.PAGE_START);
 
         pnlGridFacil.setLayout(new java.awt.GridLayout(2, 5, 5, 5));
-
-        jButton4.setText("1");
-        jButton4.setName("1"); // NOI18N
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-        pnlGridFacil.add(jButton4);
-
-        jButton5.setText("2");
-        jButton5.setName("2"); // NOI18N
-        pnlGridFacil.add(jButton5);
-
-        jButton6.setText("3");
-        jButton6.setName("3"); // NOI18N
-        pnlGridFacil.add(jButton6);
-
-        jButton7.setText("4");
-        jButton7.setName("4"); // NOI18N
-        pnlGridFacil.add(jButton7);
-
-        jButton8.setText("5");
-        jButton8.setName("5"); // NOI18N
-        pnlGridFacil.add(jButton8);
-
-        jButton9.setText("6");
-        jButton9.setName("6"); // NOI18N
-        pnlGridFacil.add(jButton9);
-
-        jButton10.setText("7");
-        jButton10.setName("7"); // NOI18N
-        pnlGridFacil.add(jButton10);
-
-        jButton11.setText("8");
-        jButton11.setName("8"); // NOI18N
-        pnlGridFacil.add(jButton11);
-
-        jButton12.setText("9");
-        jButton12.setName("9"); // NOI18N
-        pnlGridFacil.add(jButton12);
-
-        jButton13.setText("10");
-        jButton13.setName("10"); // NOI18N
-        pnlGridFacil.add(jButton13);
-
         jPanel4.add(pnlGridFacil, java.awt.BorderLayout.CENTER);
 
         jPanel7.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
@@ -356,6 +446,67 @@ public class GUI_MenuPrincipal extends javax.swing.JFrame {
 
         pnlCards.add(pnlCardMedio, "cardMedio");
 
+        pnlCardDificil.setLayout(new java.awt.GridBagLayout());
+
+        jPanel16.setLayout(new java.awt.BorderLayout(0, 10));
+
+        jPanel17.setLayout(new java.awt.GridBagLayout());
+
+        lblJugadorDificil.setText("Jugador: ");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.RELATIVE;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(0, 30, 0, 0);
+        jPanel17.add(lblJugadorDificil, gridBagConstraints);
+
+        lblIntentosDificil.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblIntentosDificil.setText("Intentos: 0");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 30);
+        jPanel17.add(lblIntentosDificil, gridBagConstraints);
+
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("Selecciona el numero ganador");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 10, 0);
+        jPanel17.add(jLabel6, gridBagConstraints);
+
+        jPanel16.add(jPanel17, java.awt.BorderLayout.PAGE_START);
+
+        pnlGridDificil.setLayout(new java.awt.GridLayout(5, 10, 5, 5));
+        jPanel16.add(pnlGridDificil, java.awt.BorderLayout.CENTER);
+
+        jPanel18.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
+
+        btnSalirDificil.setText("Regresar");
+        btnSalirDificil.setPreferredSize(new java.awt.Dimension(80, 50));
+        btnSalirDificil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirDificilActionPerformed(evt);
+            }
+        });
+        jPanel18.add(btnSalirDificil);
+
+        jPanel16.add(jPanel18, java.awt.BorderLayout.PAGE_END);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(0, 50, 50, 50);
+        pnlCardDificil.add(jPanel16, gridBagConstraints);
+
+        pnlCards.add(pnlCardDificil, "cardDificil");
+
         jPanel1.add(pnlCards, java.awt.BorderLayout.CENTER);
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
@@ -368,23 +519,8 @@ public class GUI_MenuPrincipal extends javax.swing.JFrame {
         obLogica.iniciarJuegoAdivinanza();
     }//GEN-LAST:event_btnAdivinarActionPerformed
 
-    private void btnFacilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFacilActionPerformed
-//        setExtendedState(this.MAXIMIZED_BOTH);
-        obLogica.iniciarFacil();
-    }//GEN-LAST:event_btnFacilActionPerformed
-
-    private void btnRegresarAMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarAMenuActionPerformed
-        obLogica.menuPrincipal();
-    }//GEN-LAST:event_btnRegresarAMenuActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-//        generarNumeroFacil();
-    }//GEN-LAST:event_jButton4ActionPerformed
-
     private void btnSalirFacilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirFacilActionPerformed
-//        cardLayout.show(pnlCards, "cardDificultad");
-//        setSize(822, 544);
-//        setLocationRelativeTo(null);
+
         obLogica.seleccionarDificultad();
     }//GEN-LAST:event_btnSalirFacilActionPerformed
 
@@ -392,69 +528,52 @@ public class GUI_MenuPrincipal extends javax.swing.JFrame {
         obLogica.seleccionarDificultad();
     }//GEN-LAST:event_btnSalirMedioActionPerformed
 
-    private void btnNormalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNormalActionPerformed
-        obLogica.iniciarMedio(lblJugadorMedio, lblIntentosMedio);
-    }//GEN-LAST:event_btnNormalActionPerformed
+    private void btnFacilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFacilActionPerformed
+        obLogica.iniciarFacil();
+    }//GEN-LAST:event_btnFacilActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-//    public static void main(String args[]) {
-//        /* Set the Nimbus look and feel */
-//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-//         */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(GUI_MenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(GUI_MenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(GUI_MenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(GUI_MenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        //</editor-fold>
-//
-//        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new GUI_MenuPrincipal().setVisible(true);
-//            }
-//        });
-//    }
+    private void btnMedioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMedioActionPerformed
+        obLogica.iniciarMedio(lblJugadorMedio, lblIntentosMedio);
+    }//GEN-LAST:event_btnMedioActionPerformed
+
+    private void btnMenuPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuPrincipalActionPerformed
+        obLogica.menuPrincipal();
+    }//GEN-LAST:event_btnMenuPrincipalActionPerformed
+
+    private void btnSalirDificilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirDificilActionPerformed
+        obLogica.seleccionarDificultad();
+    }//GEN-LAST:event_btnSalirDificilActionPerformed
+
+    private void btnDificilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDificilActionPerformed
+        obLogica.iniciarDificil(lblJugadorDificil, lblIntentosDificil);
+    }//GEN-LAST:event_btnDificilActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdivinar;
-    private javax.swing.JButton btnFacil;
-    private javax.swing.JButton btnNormal;
-    private javax.swing.JButton btnRegresarAMenu;
+    private button.MyButton btnDificil;
+    private button.MyButton btnFacil;
+    private button.MyButton btnMedio;
+    private button.MyButton btnMenuPrincipal;
+    private javax.swing.JButton btnSalirDificil;
     private javax.swing.JButton btnSalirFacil;
     private javax.swing.JButton btnSalirMedio;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -464,15 +583,19 @@ public class GUI_MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JLabel lblIntentos;
+    private javax.swing.JLabel lblIntentosDificil;
     private javax.swing.JLabel lblIntentosMedio;
+    private javax.swing.JLabel lblJugadorDificil;
     private javax.swing.JLabel lblJugadorFacil;
     private javax.swing.JLabel lblJugadorMedio;
     private javax.swing.JLabel lblSuerteJugador;
+    private javax.swing.JPanel pnlCardDificil;
     private javax.swing.JPanel pnlCardDificultad;
     private javax.swing.JPanel pnlCardFacil;
     private javax.swing.JPanel pnlCardInicio;
     private javax.swing.JPanel pnlCardMedio;
     private javax.swing.JPanel pnlCards;
+    private javax.swing.JPanel pnlGridDificil;
     private javax.swing.JPanel pnlGridFacil;
     private javax.swing.JPanel pnlGridMedio;
     private javax.swing.JPanel pnlHeader;

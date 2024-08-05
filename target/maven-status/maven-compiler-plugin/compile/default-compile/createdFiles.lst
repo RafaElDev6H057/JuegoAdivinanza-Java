@@ -1,5 +1,6 @@
 button\MyButton$1.class
 vista\GUI_MenuPrincipal$7.class
+logica\Logica$3.class
 button\MyButton.class
 logica\Logica$2.class
 logica\Logica.class
@@ -10,5 +11,6 @@ vista\GUI_MenuPrincipal$3.class
 vista\GUI_MenuPrincipal$5.class
 logica\Logica$1.class
 principal\Main.class
+vista\GUI_MenuPrincipal$8.class
 vista\GUI_MenuPrincipal.class
 vista\GUI_MenuPrincipal$4.class
