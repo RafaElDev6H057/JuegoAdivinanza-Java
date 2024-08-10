@@ -1,6 +1,5 @@
 package principal;
 
-import com.formdev.flatlaf.FlatDarculaLaf;
 import com.formdev.flatlaf.intellijthemes.FlatArcDarkOrangeIJTheme;
 import vista.GUI_MenuPrincipal;
 

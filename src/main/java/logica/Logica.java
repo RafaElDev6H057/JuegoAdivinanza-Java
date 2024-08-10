@@ -77,7 +77,12 @@ public class Logica {
                                 cardLayout.show(pnlCards, "cardDificultad");
                             }
                         } else {
-                            JOptionPane.showMessageDialog(null, "Incorrecto. Intenta de nuevo.");
+                            if (numeroSecreto > numeroSeleccionado) {
+                                JOptionPane.showMessageDialog(null, "Incorrecto. Intenta de nuevo.\nEl numero a adivinar es mas grande!");
+                            } else {
+                                JOptionPane.showMessageDialog(null, "Incorrecto. Intenta de nuevo.\nEl numero a adivinar es mas pequeño!");
+                            }
+//                            JOptionPane.showMessageDialog(null, "Incorrecto. Intenta de nuevo.");
                             boton.setColor(new Color(255, 51, 51));
                             boton.setColorOver(new Color(255, 51, 51));
                             boton.setColorClick(new Color(255, 51, 51));
@@ -112,7 +117,7 @@ public class Logica {
         reiniciarMedio(lblIntentosMedio);
         cardLayout.show(pnlCards, "cardMedio");
         lblJugadorMedio.setText("Jugador: " + nombre);
-        
+
         // Asegurarse de que cada botón solo tenga un ActionListener
         for (Component comp : pnlGridMedio.getComponents()) {
             if (comp instanceof JButton) {
@@ -141,7 +146,12 @@ public class Logica {
                                 cardLayout.show(pnlCards, "cardDificultad");
                             }
                         } else {
-                            JOptionPane.showMessageDialog(null, "Incorrecto. Intenta de nuevo.");
+                            if (numeroSecreto > numeroSeleccionado) {
+                                JOptionPane.showMessageDialog(null, "Incorrecto. Intenta de nuevo.\nEl numero a adivinar es mas grande!");
+                            } else {
+                                JOptionPane.showMessageDialog(null, "Incorrecto. Intenta de nuevo.\nEl numero a adivinar es mas pequeño!");
+                            }
+//                            JOptionPane.showMessageDialog(null, "Incorrecto. Intenta de nuevo.");
                             boton.setColor(new Color(255, 51, 51));
                             boton.setColorOver(new Color(255, 51, 51));
                             boton.setColorClick(new Color(255, 51, 51));
@@ -153,8 +163,8 @@ public class Logica {
             }
         }
     }
-    
-    private void reiniciarMedio(JLabel lblIntentosMedio){
+
+    private void reiniciarMedio(JLabel lblIntentosMedio) {
         Random random = new Random();
         numeroSecreto = random.nextInt(30) + 1;
         intentos = 0;
@@ -171,12 +181,12 @@ public class Logica {
             contador++;
         }
     }
-    
+
     public void iniciarDificil(JLabel lblJugadorDificil, JLabel lblIntentosDificil) {
         reiniciarDificil(lblIntentosDificil);
         cardLayout.show(pnlCards, "cardDificil");
         lblJugadorDificil.setText("Jugador: " + nombre);
-        
+
         // Asegurarse de que cada botón solo tenga un ActionListener
         for (Component comp : pnlGridDificil.getComponents()) {
             if (comp instanceof JButton) {
@@ -205,7 +215,12 @@ public class Logica {
                                 cardLayout.show(pnlCards, "cardDificultad");
                             }
                         } else {
-                            JOptionPane.showMessageDialog(null, "Incorrecto. Intenta de nuevo.");
+                            if (numeroSecreto > numeroSeleccionado) {
+                                JOptionPane.showMessageDialog(null, "Incorrecto. Intenta de nuevo.\nEl numero a adivinar es mas grande!");
+                            } else {
+                                JOptionPane.showMessageDialog(null, "Incorrecto. Intenta de nuevo.\nEl numero a adivinar es mas pequeño!");
+                            }
+//                            JOptionPane.showMessageDialog(null, "Incorrecto. Intenta de nuevo.");
                             boton.setColor(new Color(255, 51, 51));
                             boton.setColorOver(new Color(255, 51, 51));
                             boton.setColorClick(new Color(255, 51, 51));
@@ -217,8 +232,8 @@ public class Logica {
             }
         }
     }
-    
-    private void reiniciarDificil(JLabel lblIntentosDificil){
+
+    private void reiniciarDificil(JLabel lblIntentosDificil) {
         Random random = new Random();
         numeroSecreto = random.nextInt(50) + 1;
         intentos = 0;
@@ -235,12 +250,12 @@ public class Logica {
             contador++;
         }
     }
-    
-    public void seleccionarDificultad(){
+
+    public void seleccionarDificultad() {
         cardLayout.show(pnlCards, "cardDificultad");
     }
-    
-    public void menuPrincipal(){
+
+    public void menuPrincipal() {
         cardLayout.show(pnlCards, "cardInicio");
     }
 }
